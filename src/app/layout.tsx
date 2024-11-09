@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     default: `${DATA.name}'s Portfolio`,
     template: `%s | ${DATA.name}`,
   },
-  description: DATA.description,
+  description: DATA.about_me,
   openGraph: {
     title: `${DATA.name}`,
-    description: DATA.description,
+    description: DATA.about_me,
     url: "/me.jpg",
     siteName: `${DATA.name}'s Portfolio`,
     locale: "en_US",
