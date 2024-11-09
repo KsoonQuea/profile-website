@@ -56,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/me.jpg" type="image/jpeg" sizes="32x32" />
+        <link rel="icon" href="/lime.svg" type="image/jpeg" sizes="32x32" />
       </head>
       <body
         className={cn(
