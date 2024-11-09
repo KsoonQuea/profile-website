@@ -24,18 +24,20 @@ interface ResumeCardProps {
     href: string;
     icon: React.ReactNode;
   }[];
+  subtitle2?: string;
 }
 
 export const ResumeCard = ({
-  logoUrl,
-  altText,
-  title,
-  subtitle,
-  href,
-  badges,
-  period,
-  description,
-  links,
+    logoUrl,
+    altText,
+    title,
+    subtitle,
+    href,
+    badges,
+    period,
+    description,
+    links,
+    subtitle2,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -102,7 +104,8 @@ export const ResumeCard = ({
                 {period}
               </div>
             </div>
-            {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
+                {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
+                <div className="font-sans text-xs">{subtitle2}</div>
           </CardHeader>
           {description && (
             <motion.div
@@ -132,23 +135,23 @@ export const ResumeCard = ({
                 >
                   {description}
                 </Markdown>
-                {links && (
-                  <div className="flex flex-wrap gap-x-2 mt-4">
-                    {links.map((link, index) => (
-                      <Link
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        key={index}
-                        href={link.href}
-                        className="flex items-center gap-x-2 text-xs no-underline hover:underline"
-                        onClick={handleDescriptionClick}
-                      >
-                        {link.icon}
-                        {link.type}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                {/*{links && (*/}
+                {/*  <div className="flex flex-wrap gap-x-2 mt-4">*/}
+                {/*    {links.map((link, index) => (*/}
+                {/*      <Link*/}
+                {/*        target="_blank"*/}
+                {/*        rel="noopener noreferrer"*/}
+                {/*        key={index}*/}
+                {/*        href={link.href}*/}
+                {/*        className="flex items-center gap-x-2 text-xs no-underline hover:underline"*/}
+                {/*        onClick={handleDescriptionClick}*/}
+                {/*      >*/}
+                {/*        {link.icon}*/}
+                {/*        {link.type}*/}
+                {/*      </Link>*/}
+                {/*    ))}*/}
+                {/*  </div>*/}
+                {/*)}*/}
               </div>
             </motion.div>
           )}
