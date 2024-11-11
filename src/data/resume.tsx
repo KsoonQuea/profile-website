@@ -15,8 +15,8 @@ export const DATA = {
   role          : [
     "Software Developer",
     "Quality Assurance",
-    "Investor",
-    "Trader"
+    // "Investor",
+    // "Trader"
   ],
   url           : "https://www.chiragaggarwal.tech/",
   location      : "Johor, Malaysia",
@@ -208,8 +208,26 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/suraksha-ai.png",
+      image: "/portfolio/queagarden-preview.png",
     },
+
+    // {
+    //   title: "Quea Garden Management",
+    //   href: "https://github.com/KsoonQuea/queagarden",
+    //   dates: "",
+    //   active: true,
+    //   description:
+    //       "Internal Management System of Open Billing",
+    //   technologies: ["Laravel", "Filament PHP", "Livewire", "Tailwind js"],
+    //   links: [
+    //     {
+    //       type: "Source",
+    //       href: "https://github.com/KsoonQuea/queagarden",
+    //       icon: <Icons.github className="size-3" />,
+    //     },
+    //   ],
+    //   image: "/suraksha-ai.png",
+    // },
   ],
   positions: [
     {
