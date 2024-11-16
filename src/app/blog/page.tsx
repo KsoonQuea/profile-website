@@ -8,6 +8,12 @@ export const metadata = {
     "A list of all my content related work published on various sites.",
 };
 
+interface Post {
+  id: string
+  title: string
+  content: string
+}
+
 const posts = [
   {
     title: "Mastering npm: A Comprehensive Guide to Package Management",
@@ -118,58 +124,104 @@ const timeToHowLongAgo = (date: string) => {
   return "few seconds ago";
 };
 
-export default async function BlogPage() {
-  const fetchBlogs = async () => {
-    "use server";
-
-    const supabase = createClient();
-    let { data: blogs } = await supabase
-      .from("blogs")
-      .select("*, links (icon, type, href)");
-    return blogs;
-  };
-
-  // const blogs = await fetchBlogs()
-
-  // if(!blogs) return null;
+export default async function BlogPage({ params }: { params: { id: string } }) {
+  const post: Post = await fetch(
+      `https://ksoon-quea.vercel.app/`
+  ).then((res) => res.json())
 
   const blogs = posts;
 
   return (
-    <section>
-      <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="font-medium text-3xl font-semibold mb-8 tracking-tighter">
-          Blogs ✏️
-        </h1>
-        <p className="mb-8">
-          So... I not only like to read long and boring documentations, research
-          papers and journals, I also like to write them! Here you can find some
-          of my favourite content related work published on various sites.
-        </p>
-      </BlurFade>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 mx-auto">
-        {blogs
-          .sort((a, b) => {
-            if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
-              return -1;
-            }
-            return 1;
-          })
-          .map((post, id) => (
-            <BlurFade delay={BLUR_FADE_DELAY * 2 + id * 0.05} key={id}>
-              <ProjectCard
-                key={post.title}
-                title={post.title}
-                description={post.description}
-                dates={timeToHowLongAgo(post.publishedAt)}
-                tags={post.tags}
-                href={post.href}
-                image={post.thumbnail}
-                links={[post.links[0]]}
-              />
-            </BlurFade>
-          ))}
-      </div>
-    </section>
-  );
+      <section>
+        <BlurFade delay={BLUR_FADE_DELAY}>
+          <h1 className="font-medium text-3xl font-semibold mb-8 tracking-tighter">
+            Blogs ✏️
+          </h1>
+          <p className="mb-8">
+            So... I not only like to read long and boring documentations, research
+            papers and journals, I also like to write them! Here you can find some
+            of my favourite content related work published on various sites.
+          </p>
+        </BlurFade>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 mx-auto">
+          {blogs
+              .sort((a, b) => {
+                if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
+                  return -1;
+                }
+                return 1;
+              })
+              .map((post, id) => (
+                  <BlurFade delay={BLUR_FADE_DELAY * 2 + id * 0.05} key={id}>
+                    <ProjectCard
+                        key={post.title}
+                        title={post.title}
+                        description={post.description}
+                        dates={timeToHowLongAgo(post.publishedAt)}
+                        tags={post.tags}
+                        href={post.href}
+                        image={post.thumbnail}
+                        links={[post.links[0]]}
+                    />
+                  </BlurFade>
+              ))}
+        </div>
+      </section>
+  )
 }
+
+// export default async function BlogPage() {
+//   const fetchBlogs = async () => {
+//     "use server";
+//
+//     const supabase = createClient();
+//     let {data: blogs} = await supabase
+//         .from("blogs")
+//         .select("*, links (icon, type, href)");
+//     return blogs;
+//   };
+//
+//   // const blogs = await fetchBlogs()
+//
+//   // if(!blogs) return null;
+//
+//   const blogs = posts;
+//
+//   return (
+//       <section>
+//         <BlurFade delay={BLUR_FADE_DELAY}>
+//           <h1 className="font-medium text-3xl font-semibold mb-8 tracking-tighter">
+//             Blogs ✏️
+//           </h1>
+//           <p className="mb-8">
+//             So... I not only like to read long and boring documentations, research
+//             papers and journals, I also like to write them! Here you can find some
+//             of my favourite content related work published on various sites.
+//           </p>
+//         </BlurFade>
+//         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 mx-auto">
+//           {blogs
+//               .sort((a, b) => {
+//                 if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
+//                   return -1;
+//                 }
+//                 return 1;
+//               })
+//               .map((post, id) => (
+//                   <BlurFade delay={BLUR_FADE_DELAY * 2 + id * 0.05} key={id}>
+//                     <ProjectCard
+//                         key={post.title}
+//                 title={post.title}
+//                 description={post.description}
+//                 dates={timeToHowLongAgo(post.publishedAt)}
+//                 tags={post.tags}
+//                 href={post.href}
+//                 image={post.thumbnail}
+//                 links={[post.links[0]]}
+//               />
+//             </BlurFade>
+//           ))}
+//       </div>
+//     </section>
+//   );
+// }
