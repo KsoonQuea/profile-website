@@ -1,10 +1,15 @@
 import { Icons } from "@/components/icons";
 import {BookAIcon, HomeIcon, NotebookIcon, Play} from "lucide-react";
 import {GLOBAL_VARIABLES} from "@/data/Enum/global_variable";
+import fs from 'fs';
+import path from 'path';
 
-const work_email  = "kuangsoonquea@outlook.com";
-const about_me    = "I’m an IT professional from Malaysia with a background in tech support, quality assurance, and backend development. My goal is to transition fully into backend development, and I’m currently preparing for roles like Apps Automation Testing Developer. I bring strong freelancing experience and a focus on continuous learning, especially in programming, automation, and data analysis for cryptocurrency trading. Driven by a passion for technology and the pursuit of financial freedom, I’m eager to make a meaningful impact and contribute my skills to a forward-thinking IT team.";
-const resume_link = "/resume/Quea Kuang Soon Resume - Sept 2024.pdf"
+import {directoryToArray} from "@/utils/directory-to-array";
+
+const work_email      = "kuangsoonquea@outlook.com";
+const about_me        = "I’m an IT professional from Malaysia with a background in tech support, quality assurance, and backend development. My goal is to transition fully into backend development, and I’m currently preparing for roles like Apps Automation Testing Developer. I bring strong freelancing experience and a focus on continuous learning, especially in programming, automation, and data analysis for cryptocurrency trading. Driven by a passion for technology and the pursuit of financial freedom, I’m eager to make a meaningful impact and contribute my skills to a forward-thinking IT team.";
+const resume_link     = "/resume/Quea Kuang Soon Resume - Sept 2024.pdf"
+const avatar          = "/avatar/ksoon_avatar_mini.jpg"
 
 export const DATA = {
   name          : "Quea Kuang Soon",
@@ -18,11 +23,11 @@ export const DATA = {
     // "Investor",
     // "Trader"
   ],
-  url           : "https://www.chiragaggarwal.tech/",
+  url           : "https://ksoon-quea.vercel.app/",
   location      : "Johor, Malaysia",
   locationLink  : "https://maps.app.goo.gl/Zbzok1mCik445h1C6",
   about_me: about_me,
-  avatarUrl: "/lime.svg",
+  avatarUrl: avatar,
   skills: [
       "Laravel Framework",
       "JavaScript",
@@ -68,18 +73,18 @@ export const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "www.linkedin.com/in/quea-kuang-soon-959153243",
+        url: "https://www.linkedin.com/in/quea-kuang-soon-959153243/",
         icon: Icons.linkedin,
 
         navbar: true,
       },
-      X: {
-        name: "X",
-        url: "https://x.com/ks_quea",
-        icon: Icons.x,
-
-        navbar: true,
-      },
+      // X: {
+      //   name: "X",
+      //   url: "https://x.com/ks_quea",
+      //   icon: Icons.x,
+      //
+      //   navbar: true,
+      // },
       email: {
         name: "Send Email",
         url: `mailto: ${work_email}`,
@@ -192,6 +197,31 @@ export const DATA = {
       end     : "June 2021",
     }
   ],
+
+  portfolios: [
+    {
+      title: "Financial Case Submission System",
+      description: ``,
+      technologies: ["Laravel", "Alpine.js", "Tailwind CSS", "Bootstrap CSS", "JQuery", "JavaScript"],
+      main_image: "/portfolio/nexus-portfolio/nexus-dashboard.png",
+      content_images: directoryToArray("public/portfolio/nexus-portfolio")
+    },
+    {
+      title: "Watch POS System (Admin Portal & API)",
+      description: "",
+      technologies: ["Laravel", "Livewire", "Tailwind CSS", "Bootstrap CSS", "Restful API", "Postman", "JQuery", "JavaScript"],
+      main_image: "/portfolio/westime-portfolio/wt-dashboard.png",
+      content_images: directoryToArray("public/portfolio/westime-portfolio")
+    },
+    {
+      title: "Mobile Case Tracking System",
+      description: "",
+      technologies: ["Laravel", "Restful API", "Kotlin", "Postman", "Swagger UI"],
+      main_image: "/portfolio/propest-portfolio/pp-pending.jpg",
+      content_images: directoryToArray("public/portfolio/propest-portfolio"),
+    },
+  ],
+
   projects: [
     {
       title: "Quea Garden Management",
@@ -210,24 +240,6 @@ export const DATA = {
       ],
       image: "/portfolio/queagarden-preview.png",
     },
-
-    // {
-    //   title: "Quea Garden Management",
-    //   href: "https://github.com/KsoonQuea/queagarden",
-    //   dates: "",
-    //   active: true,
-    //   description:
-    //       "Internal Management System of Open Billing",
-    //   technologies: ["Laravel", "Filament PHP", "Livewire", "Tailwind js"],
-    //   links: [
-    //     {
-    //       type: "Source",
-    //       href: "https://github.com/KsoonQuea/queagarden",
-    //       icon: <Icons.github className="size-3" />,
-    //     },
-    //   ],
-    //   image: "/suraksha-ai.png",
-    // },
   ],
   positions: [
     {
