@@ -124,7 +124,7 @@ const timeToHowLongAgo = (date: string) => {
   return "few seconds ago";
 };
 
-export default async function BlogPage({ params }: { params: { id: string } }) {
+export default async function BlogPage() {
   const post: Post = await fetch(
       `https://ksoon-quea.vercel.app/`
   ).then((res) => res.json())
