@@ -12,11 +12,13 @@ import { Notebook } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
+import parser from 'html-react-parser';
+
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
-      <main className="flex items-center justify-center flex-col min-h-[100dvh] space-y-10">
+      <main className="flex items-center justify-center flex-col min-h-[100dvh] space-y-10 min-w-fit">
         <section id="hero">
           <div className="mx-auto w-full max-w-2xl space-y-8">
             <div className="gap-2 flex justify-between">
@@ -36,7 +38,7 @@ export default function Page() {
               </div>
               <BlurFade delay={BLUR_FADE_DELAY}>
                 <Avatar className="size-28 border">
-                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl}/>
+                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} className={"object-cover"}/>
                   <AvatarFallback>{DATA.initials}</AvatarFallback>
                 </Avatar>
               </BlurFade>
@@ -49,8 +51,10 @@ export default function Page() {
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
             <Markdown
-                className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+                className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert mb-2">
               {DATA.about_me}
+              {/*<div dangerouslySetInnerHTML={ { __html: DATA.about_me } }/>*/}
+
             </Markdown>
             <div className="flex items-center justify-end">
               <Link

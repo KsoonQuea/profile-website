@@ -1,15 +1,16 @@
 import { Icons } from "@/components/icons";
 import {BookAIcon, HomeIcon, NotebookIcon, Play} from "lucide-react";
 import {GLOBAL_VARIABLES} from "@/data/Enum/global_variable";
-import fs from 'fs';
-import path from 'path';
-
 import {directoryToArray} from "@/utils/directory-to-array";
 
 const work_email      = "kuangsoonquea@outlook.com";
-const about_me        = "I’m an IT professional from Malaysia with a background in tech support, quality assurance, and backend development. My goal is to transition fully into backend development, and I’m currently preparing for roles like Apps Automation Testing Developer. I bring strong freelancing experience and a focus on continuous learning, especially in programming, automation, and data analysis for cryptocurrency trading. Driven by a passion for technology and the pursuit of financial freedom, I’m eager to make a meaningful impact and contribute my skills to a forward-thinking IT team.";
-const resume_link     = "/resume/Quea Kuang Soon Resume - Sept 2024.pdf"
-const avatar          = "/avatar/ksoon_avatar_mini.jpg"
+const about_me        =
+    "Hi ! I’m a Code Farmer from Malaysia with a background in Software Developer, Software Quality Assurance, and IT Support. " +
+    "I strive to craft reliable, user-focused solutions that blend creativity with precision.";
+const resume_link     = "/resume/Quea Kuang Soon Resume - Sept 2024.pdf";
+const avatar          = "/avatar/ksoon_avatar_mini.jpg";
+
+// about_me = `<!--<div>Hi ! I’m an IT professional from Malaysia with a background in Software Developer, Software Quality Assurance, and IT Support. <br/>My goal is to transition fully into backend development, and I’m currently preparing for roles like Apps Automation Testing Developer.</div>-->`;
 
 export const DATA = {
   name          : "Quea Kuang Soon",
@@ -19,7 +20,7 @@ export const DATA = {
   resume_link   : resume_link,
   role          : [
     "Software Developer",
-    "Quality Assurance",
+    "Software Quality Assurance",
     // "Investor",
     // "Trader"
   ],
@@ -219,6 +220,13 @@ export const DATA = {
       technologies: ["Laravel", "Restful API", "Kotlin", "Postman", "Swagger UI"],
       main_image: "/portfolio/propest-portfolio/pp-pending.jpg",
       content_images: directoryToArray("public/portfolio/propest-portfolio"),
+    },
+    {
+      title: "Lawyer Case Submission & Internal Management System ",
+      description: "",
+      technologies: ["PHP", "Bootstrap CSS", "JavaScript"],
+      main_image: "/portfolio/lawyer-portfolio/lwy-case-list.png",
+      content_images: directoryToArray("public/portfolio/lawyer-portfolio"),
     },
   ],
 
