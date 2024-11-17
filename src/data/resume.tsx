@@ -225,7 +225,7 @@ export const DATA = {
       title: "Lawyer Case Submission & Internal Management System ",
       description: "",
       technologies: ["PHP", "Bootstrap CSS", "JavaScript"],
-      main_image: "/portfolio/lawyer-portfolio/lwy-case-list.png",
+      main_image: "/portfolio/lawyer-portfolio/lwy-case-list-2.png",
       content_images: directoryToArray("public/portfolio/lawyer-portfolio"),
     },
   ],
