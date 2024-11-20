@@ -91,7 +91,7 @@ export const DATA = {
         url: `mailto: ${work_email}`,
         icon: Icons.email,
 
-        navbar: false,
+        navbar: true,
       },
     },
   },
