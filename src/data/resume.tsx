@@ -4,6 +4,7 @@ import {GLOBAL_VARIABLES} from "@/data/Enum/global_variable";
 import {directoryToArray} from "@/utils/directory-to-array";
 
 const work_email      = "kuangsoonquea@outlook.com";
+const work_phone      = "60108099587";
 const about_me        =
     "Hi ! I’m a Code Farmer from Malaysia with a background in Software Developer, Software Quality Assurance, and IT Support. " +
     "I strive to craft reliable, user-focused solutions that blend creativity with precision.";
@@ -63,7 +64,7 @@ export const DATA = {
   ],
   contact: {
     email: work_email,
-    tel: "+60 108099587",
+    tel: work_phone,
     social: {
       GitHub: {
         name: "GitHub",
@@ -86,10 +87,17 @@ export const DATA = {
 
         navbar: false,
       },
-      email: {
+      Email: {
         name: "Send Email",
         url: `mailto:${work_email}`,
         icon: Icons.email,
+
+        navbar: true,
+      },
+      WhatsApp: {
+        name: "WhatsApp Me",
+        url: `https://wa.me/${work_phone}`,
+        icon: Icons.whatsapp,
 
         navbar: true,
       },
