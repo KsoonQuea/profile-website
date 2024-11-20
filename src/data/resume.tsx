@@ -79,16 +79,16 @@ export const DATA = {
 
         navbar: true,
       },
-      // X: {
-      //   name: "X",
-      //   url: "https://x.com/ks_quea",
-      //   icon: Icons.x,
-      //
-      //   navbar: true,
-      // },
+      X: {
+        name: "X",
+        url: "https://x.com/ks_quea",
+        icon: Icons.x,
+
+        navbar: false,
+      },
       email: {
         name: "Send Email",
-        url: `mailto: ${work_email}`,
+        url: `mailto:${work_email}`,
         icon: Icons.email,
 
         navbar: true,
@@ -120,11 +120,6 @@ export const DATA = {
           href: "https://www.clearmind.plus/",
           icon: <Icons.globe className="size-3" />,
         },
-        {
-          type: "Letter of Recommendation",
-          href: "https://drive.google.com/file/d/1cgXwtu__St6bJzZNiq7SId0kWw5UVdPc/view?usp=sharing",
-          icon: <Icons.email className="size-3" />,
-        },
       ],
     },
     {
@@ -147,11 +142,6 @@ export const DATA = {
           type: "Website",
           href: "https://www.clearmind.plus/",
           icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Letter of Recommendation",
-          href: "https://drive.google.com/file/d/1cgXwtu__St6bJzZNiq7SId0kWw5UVdPc/view?usp=sharing",
-          icon: <Icons.email className="size-3" />,
         },
       ],
     },
@@ -178,11 +168,6 @@ export const DATA = {
           type: "Website",
           href: "https://skillarena.in/",
           icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Letter of Recommendation",
-          href: "https://drive.google.com/file/d/1ONCudngptfuLZuR7hjSinbvVSr7fEnbd/view?usp=sharing",
-          icon: <Icons.email className="size-3" />,
         },
       ],
     },
