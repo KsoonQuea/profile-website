@@ -44,4 +44,5 @@ jspm_packages
 .vercel
 
 # Env
-.env.local
+.env.localdist/
+node_modules/
